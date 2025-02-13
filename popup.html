@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Issue Creator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container hidden" id="setupContainer">
+        <h2>Setup GitHub Access</h2>
+        <label for="repo">GitHub Repo:</label>
+        <input type="text" id="repo" placeholder="Enter Repository Path Here" />
+        
+        <label for="apiKey">GitHub API Key:</label>
+        <input type="password" id="apiKey" placeholder="Enter your API key" />
+        
+        <label for="openaiKey">OpenAI API Key:</label>
+        <input type="password" id="openaiKey" placeholder="Enter your OpenAI API key" />
+        
+        <button id="saveSettings">Save & Continue</button>
+    </div>
+    
+    <div class="container hidden" id="issueContainer">
+        <h2>Create GitHub Issue</h2>
+        <label for="issueTemplate">Issue Template:</label>
+        <select id="issueTemplate">
+            <option value="bug">Bug Report</option>
+            <option value="feature">Feature Request</option>
+            <option value="task">General Task</option>
+        </select>
+        
+        <label for="priority">Priority:</label>
+        <select id="priority">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+            <option value="critical">Critical</option>
+        </select>
+        
+        <label for="description">Issue Description:</label>
+        <textarea id="description" placeholder="Describe the issue..."></textarea>
+        
+        <button id="createIssue">Create Issue</button>
+        <button id="updateSettings">Update Settings</button>
+    </div>
+    <script src="popup.js"></script>
+</body>
+</html>
