@@ -1,15 +1,20 @@
 {
   "name": "Git-AI-Agent",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Chrome extension to create GitHub issues directly from a popup using AI.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node build.js",
+    "optimize": "npm run build && npm run optimize-icons",
+    "optimize-icons": "node optimize-icons.js",
+    "clean": "rimraf dist icons",
+    "dev": "npm run optimize-icons"
   },
   "repository": {
     "url": "git+https://github.com/varunschaudhari/Git-AI-Agent.git"
   },
-  "keywords": [],
+  "keywords": ["chrome-extension", "github", "ai", "openai", "automation"],
   "author": "",
   "license": "ISC",
   "bugs": {
@@ -19,6 +24,13 @@
   "dependencies": {
     "axios": "^1.7.9",
     "dotenv": "^16.4.7",
-    "openai": "^3.2.1"
+    "openai": "^5.12.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.33.5",
+    "html-minifier": "^4.0.0",
+    "clean-css": "^5.3.3",
+    "terser": "^5.34.1",
+    "rimraf": "^6.0.1"
   }
 }
